@@ -1,13 +1,13 @@
-name: load test
+name: "Execute load test"
 
 on:
+  workflow_dispatch:
   push:
     branches: 
       - main
   pull_request:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   build:
