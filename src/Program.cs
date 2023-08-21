@@ -9,7 +9,6 @@ using RinhaBackend.Routes.GetPersonById;
 using RinhaBackend.Routes.GetPersonsCount;
 using RinhaBackend.Routes.SearchPerson;
 using RinhaBackend.Settings;
-using RinhaDeBackEnd;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);

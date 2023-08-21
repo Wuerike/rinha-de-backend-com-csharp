@@ -3,7 +3,8 @@ using StackExchange.Redis;
 using System.Text.Json;
 using RinhaBackend.Entities;
 
-namespace RinhaDeBackEnd;
+namespace RinhaBackend.Routes.AddPerson;
+
 public class ExternalConsumer: BackgroundService
 {
     private readonly ConcurrentDictionary<string, Person> _inMemoryDb;
