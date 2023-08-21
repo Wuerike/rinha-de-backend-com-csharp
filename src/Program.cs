@@ -39,13 +39,13 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(
 builder.Services.AddHostedService<ExternalConsumer>();
 builder.Services.AddHostedService<InternalConsumer>();
 builder.Services.AddSingleton(_ => new ConcurrentDictionary<string, Person>());
+builder.Services.AddSingleton(Channel.CreateUnbounded<Person>(new UnboundedChannelOptions { SingleReader = true}));
 
 // Services
 builder.Services.AddSingleton<MongoDbClient>();
 builder.Services.AddSingleton<AddPersonProducer>();
 builder.Services.AddSingleton<AddPersonRespository>();
 builder.Services.AddSingleton<GetPersonsCountRespository>();
-builder.Services.AddSingleton(Channel.CreateUnbounded<Person>(new UnboundedChannelOptions { SingleReader = true}));
 
 // Environment Settings
 builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection(MongoDbSettings.MongoDbSection));

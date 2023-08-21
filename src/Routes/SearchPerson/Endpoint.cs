@@ -23,6 +23,7 @@ internal static class Endpoint
             .Take(50)
             .Select(p => p.Value)
             .ToList();
+
         return Results.Ok(result);
     }
 }
